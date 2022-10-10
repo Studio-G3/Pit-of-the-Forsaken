@@ -1,0 +1,318 @@
+:root {
+   --pixel-size: 5;
+}
+
+.startScreen{
+   background-position-x: 0px;
+   background-repeat: no-repeat;
+   width: calc(100vw - 10px);
+   height: calc(100vh - 10px);
+   position: absolute;
+}
+
+.startGameButton{
+   background-color: transparent;
+   width: calc(19vw); 
+   height: calc(16vh);
+   left: calc(40vw);
+   top: calc(58vh);
+   position: absolute;
+   border: none;
+   cursor:pointer;
+   overflow: hidden;
+   outline:none;
+}
+
+.Character{
+   width: calc(12px * var(--pixel-size));
+   height: calc(19px * var(--pixel-size));
+   overflow: hidden;
+   position: absolute;
+   z-index: 5;
+}
+
+.Character_spritesheet {
+   left: calc(-10px * var(--pixel-size));
+   animation: moveSpritesheet 1s steps(4) infinite;
+   width: calc(128px * var(--pixel-size));
+   position: absolute;
+}
+
+ .Character_shadow {
+   position: absolute;
+   left: calc(-10px * var(--pixel-size));
+   top: calc(-13px * var(--pixel-size));
+   width: calc(32px * var(--pixel-size));
+   height: calc(32px * var(--pixel-size));
+ }
+ 
+ .pixelart {
+   image-rendering: pixelated;
+ }
+ 
+ .face-down {
+   top: calc(-13px * var(--pixel-size));
+ }
+
+ .face-right {
+   top: calc(-45px * var(--pixel-size));
+ }
+
+ .face-up {
+   top: calc(-77px * var(--pixel-size));
+ }
+
+ .face-left {
+   top: calc(-109px * var(--pixel-size));
+ }
+ 
+ .Slash {
+   position: relative;
+   width: calc(25px * var(--pixel-size));
+   height: calc(30px * var(--pixel-size));
+   z-index: 2;
+ }
+
+ #Dungeon {
+   background-size: cover;
+   background-image: url(Images/FinalFloorPlan.png);
+   width: calc(100vw - 10px);
+   height: calc(100vh - 10px); 
+   position: absolute;
+   background-color: black;
+}
+
+ @keyframes moveSpritesheet {
+   from {
+      transform: translate3d(0px,0,0)
+   }
+   to {
+      transform: translate3d(-100%,0,0)
+   }
+}
+
+.set-pos{
+   top: 0px;
+   left: 0px;
+   position: absolute;
+}
+
+.enemy{
+   position:absolute;
+}
+
+body{
+    overflow: hidden;
+}
+
+.scoreParent{
+   position: absolute;
+   top: 3%;
+   left: 5%;
+   width: 10%;
+}
+
+.timerParent{
+   position: absolute;
+   top: 3%;
+   right: 46%;
+   width: 10%;
+}
+
+.btnGroup{
+   width: 115%;
+   height: 5%;
+}
+
+.btnLeft{
+   justify-content: left;
+}
+
+.btnRight{
+   justify-content: right;
+}
+
+.pauseButton{
+   justify-content: center;
+   position: absolute;
+   top: 3%;
+   right: 2.5%;
+   width: 2.5%;
+   height: 4%;
+}
+
+.pauseIcon{
+   width: 150%;
+   height: auto;
+}
+
+.resumeButton{
+   position: absolute;
+   left: 85%;
+   width: 10%;
+}
+
+.quitButton{
+   position: absolute;
+   left: 1%;
+   width: 10%;
+}
+
+.wall0{
+   padding-bottom: 2px;
+   width: 6%;
+}
+
+.wall1{
+   padding-bottom: 2px;
+   position: absolute;
+   right: 70%;
+   width: 6%;
+}
+
+.wall2{
+   padding-bottom: 2px;
+   position: absolute;
+   right: 65%;
+   width: 6%;
+}
+
+.wall3{
+   padding-bottom: 2px;
+   position: absolute;
+   right: 60%;
+   width: 6%;
+}
+
+.wall4{
+   padding-bottom: 2px;
+   position: absolute;
+   right: 55%;
+   width: 6%;
+}
+
+.wall5{
+   padding-bottom: 2px;
+   position: absolute;
+   right: 50%;
+   width: 6%;
+}
+
+.wall6{
+   padding-bottom: 2px;
+   position: absolute;
+   right: 45%;
+   width: 6%;
+}
+
+.wall7{
+   padding-bottom: 2px;
+   position: absolute;
+   right: 40%;
+   width: 6%;
+}
+
+.wall8{
+   padding-bottom: 2px;
+   position: absolute;
+   right: 35%;
+   width: 6%;
+}
+
+.wall9{
+   padding-bottom: 2px;
+   position: absolute;
+   right: 30%;
+   width: 6%;
+}
+
+.wall10{
+   padding-bottom: 2px;
+   position: absolute;
+   right: 25%;
+   width: 6%;
+}
+
+.wall11{
+   padding-bottom: 2px;
+   position: absolute;
+   right: 0%;
+   width: 6%;
+}
+
+#gameOverMenu{
+   background-size: cover;
+   background-color: black;
+   width: calc(100vw - 10px);
+   height: calc(100vh - 10px);
+   position: absolute;
+   display: block;
+}
+#gameOverMenu h1.top{
+   padding-top: 25px;
+   color: white;
+   text-align: center;
+   font-family: arcade;
+   letter-spacing: .3ch;   
+   font-size: 50px;
+}
+#gameOverMenu h1{
+   color: white;
+   text-align: center;
+   font-family: arcade;
+   letter-spacing: .3ch;   
+   font-size: 50px;
+}
+#gameOverMenu p.tryAgain{
+   color: white;
+   text-align: center;
+   font-family: arcade;
+   letter-spacing: .3ch;
+   left: calc(32vw);
+   top: calc(58vh);
+   font-size: 32px;
+}
+.center {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+progress{
+  background-color: green;
+  left: calc(-10px * var(--pixel-size));
+  width: 75px;
+  height: 15px;
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 50px;
+} 
+
+.gameStartButton{
+   background-color: transparent;
+   width: calc(23vw);
+   height: calc(5vh);
+   left: 38%;
+   top: 74%;
+   position: absolute;
+   border: none;
+   cursor:pointer;
+   outline:none;
+   overflow: hidden;
+}
+.gameQuitButton{
+   background-color: transparent;
+   width: calc(12vw); 
+   height: calc(5vh);
+   left: 43%;
+   top: 83%;
+   position: absolute;
+   border: none;
+   cursor:pointer;
+   outline:none;
+   overflow: hidden;
+}
+@font-face {
+   font-family: arcade;
+   src: url(Fonts/ARCADECLASSIC.TTF);
+}
