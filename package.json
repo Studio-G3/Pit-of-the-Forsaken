@@ -1,0 +1,8 @@
+{
+    "name": "pit-of-the-forsaken",
+    "description": "Pit of the Forsaken - A clientside bullet-hell game",
+    "authors": "Ryan Bilash, Abel Juarez, CJ Mitterer, Ren Ross, Alex Rusin, Eric Toreki",
+    "scripts": {
+        "open": "open src/index.html || start src/index.html"
+    }
+}
