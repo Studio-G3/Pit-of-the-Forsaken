@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body style="background-color:black"></body>
+<body>
+    <!-- Main Menu -->
+    <div id="mainMenu">
+        <!-- Main Menu Music-->
+        <audio id="menuMusic" autoplay loop> <source src="audio/ambient.mp3"></audio>
+        <!-- Background Image and start Button-->
+        <img src="Images/LoadingScreen.jpg" class="startScreen">
+        <img src="GIF/LoadingGame.gif" class="startScreen">
+        <button onclick="gameStart()" class="startGameButton"></button>
+    </div>
+    <!-- Game Over -->
+    <div class= "gamveOver" id="gameOverMenu" style="display:none" >
+        <h1 class="top" id="playerScore"></h1>
+        <h1>GAME OVER</h1>
+        <img src="Images/aaaaa.png" class="center">
+        <p class="tryAgain">TRY AGAIN</p>
+        <button onclick="gameStart()" class="gameStartButton"></button>  
+        <p class="tryAgain">QUIT</p>
+        <button onclick="quitGame()" class="gameQuitButton"></button>  
+    </div>
+    <!-- Pause Menu Modal -->
+    <div class="modal fade" id="pauseModal" data-bs-backdrop="static" 
+        data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header text-center"><h5 class="modal-title w-100">Game Paused</h5></div>
+            <div class="modal-footer row justify-content-center">
+                <button type="button" class="btn btn-light" 
+                    data-bs-dismiss="modal" onclick="resumeGame()">Resume</button>
+                <button type="button" class="btn btn-light" 
+                    data-bs-dismiss="modal" onclick="quitGame()">Quit</button>
+    </div></div></div></div>
+    <!-- Game Containers -->
+    <div id="game" style="display: none;">
+        <!-- Utilities -->
+        <layer>
+            <!-- Background Music -->
+            <audio id="backgroundMusic" loop> <source src="audio/game_bgm.mp3"></audio>
+            <!-- UI Bar -->
+            <img src="Images/Dungeon_WallE.jpg" class="wall0"/>
+            <img src="Images/Dungeon_Wall2.jpg" class="wall1"/>
+            <img src="Images/Dungeon_Wall2.jpg" class="wall2"/>
+            <img src="Images/Dungeon_Wall3.jpg" class="wall3"/>
+            <img src="Images/Dungeon_Wall3.jpg" class="wall4"/>
+            <img src="Images/Dungeon_WallC.jpg" class="wall5"/>
+            <img src="Images/Dungeon_WallC.jpg" class="wall6"/>
+            <img src="Images/Dungeon_Wall3.jpg" class="wall7"/>
+            <img src="Images/Dungeon_Wall3.jpg" class="wall8"/>
+            <img src="Images/Dungeon_Wall2.jpg" class="wall9"/>
+            <img src="Images/Dungeon_Wall2.jpg" class="wall10"/>
+            <img src="Images/Dungeon_WallE.jpg" class="wall11"/>
+             <!-- Dungeon -->
+            <div id="Dungeon" style="width: 100%;"></div>
+            <!-- Score -->
+            <div class="scoreParent">
+                <div class="btn-group btnGroup" role="group">
+                    <button id="scoreHolder" type="button" class="btn btn-secondary d-flex btnLeft" style="pointer-events: none;"></button>
+                    <button id="ampHolder" type="button" class="btn btn-secondary d-flex btnRight" style="pointer-events: none;"></button>
+                </div>
+            </div>
+            <!-- Timer -->
+            <div class="timerParent">
+                <div class="btn-group btnGroup" role="group">
+                    <button type="button" class="btn btn-secondary d-flex btnLeft" style="pointer-events: none;">Timer</button>
+                    <button id="timerHolder" type="button" class="btn btn-secondary d-flex btnRight" style="pointer-events: none;"></button>
+                </div>
+            </div>
+            <!-- Pause Button -->
+            <button id="pauseBtn" type="button" class="btn btn-secondary d-flex pauseButton" data-bs-toggle="modal" 
+                data-bs-target="#pauseModal" onclick="pauseGame()"><img src="Images/pause.png" class="pauseIcon"/></button>
+        </layer>
+        <layer>
+            <!-- Character -->
+            <div id="placeholder" class="Character">
+                <img src="Images/DemoRpgBarb.png" id= livecharacter class="Character_spritesheet pixelart face-down" alt="Character"/>
+                <img src="Images/DemoRpgShadow.png" class="Character_shadow pixelart" alt="Shadow"/>
+            </div>
+            <!-- Slash Attack -->
+            <div id="slashHolder"> 
+                <img src="Images/DemoRPGSlash.png" id="RPGslash" class="Slash" style="visibility:hidden" alt="Slash"/>
+            </div>
+            <!-- Health Bar -->
+            <div id="healthBar">
+                <progress id="liveHealthBar" class="healthBar" value="100" max="100"></progress>
+            </div>
+            <!-- Enemy -->
+            <div id="enemyDiv" class="set-pos"></div>
+        </layer>
+    </layer>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    </body>
+</html>
